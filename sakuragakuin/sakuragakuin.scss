@@ -1,11 +1,11 @@
 /* Variables */
-/* Basic colors not to be used in the scss */
 
+/* Basic named colors not to be used in the scss directly */
 $sakura-pink-color: #f0037f;
 $sakura-pink-background-color: #ffd1dc;
 
 /* Naut's colors */
-$naut-body-background-color: #f1f1f1;
+$naut-body-background-color: $sakura-pink-background-color; /*#f1f1f1;*/
 $naut-body-color: #3b3b3b;
 $naut-browser-selection-background-color: #5b92fa;
 $naut-browser-selection-color: #fff;
@@ -25,7 +25,7 @@ $naut-footer-color: #969696;
 $naut-footer-hover-color: #5b92fa;
 
 /* Colors used in the SCSS */
-$vanity-name-color: #ff91f8;
+$vanity-name-color: $sakura-pink-color;
 
 /* Images */
 $upvote-image: url(%%vote-flowers-upvote%%); 
@@ -34,6 +34,8 @@ $upvoted-image: url(%%vote-flowers-upvoted%%);
 $downvote-image: url(%%vote-flowers-downvote%%); 
 $downvote-hover-image: url(%%vote-flowers-downvote-hover%%) !important; 
 $downvoted-image: url(%%vote-flowers-downvoted%%); 
+$background-left: url(%%background-left%%); 
+$background-right: url(%%background-right%%); 
 
 /* Sizes */
 $vote-arrow-width: 25px;
@@ -41,6 +43,7 @@ $vote-arrow-height: 25px;
 $logo-height: 148px;
 $logo-width: $logo-height * 3.216216216216216;
 $header-height: 200px;
+$side-width: 300px;
 
 /* Vanity names */
 %vanity-name {	
@@ -71,7 +74,7 @@ a.author[href$="user/BurntJoint"]:before {
 }
 a.author[href$="user/EraYaN"]:before {
   @extend %vanity-name:before;
-  content:"CSS Dev";
+  content:"CSS Master BLEHRG";
   margin-right: -3.33em;
 }
 
@@ -433,7 +436,7 @@ body {
 		height: 12px;
 		background-color: #fff;
 	}
-		.user {color: #7A7A7A;}
+		.user {color: #7A7A7A; font-size: 15px;} /* EraYaN Fixed those awefully small ( and ) around the karma) */
 			.loggedin .user {color: #7A7A7A;}
 		
 		#header-bottom-right a {
@@ -455,6 +458,7 @@ body {
 			width: 16px;
 			height: 16px;
 			background-image: url(%%spritesheet%%) !important;
+			margin-bottom: -2px; /* EraYaN chnage added this line */
 		}
 
 			#mail:hover, #modmail:hover {
@@ -519,10 +523,10 @@ body {
 	/* Sidebar */
 	.side {
 		float: right;
-		margin: 34px 10px 0px 0px;
+		margin: 14px 10px 0px 0px;
 		border-radius: 2px;
 		padding-top: 25px;
-		width: 300px;
+		width: $side-width;
 		text-align: left;
 		font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 	}
@@ -537,7 +541,7 @@ body {
 			font-size: 16px;
 			font-family: arial, sans-serif;
 			position: absolute;
-			width: 300px;
+			width: $side-width;
 			text-align: center;
 		}
 				
@@ -611,7 +615,7 @@ body {
 		/* Subreddit name sidebar */
 		.titlebox h1 a {
 			position: absolute;
-			top: $header-height + 44px;
+			top: $header-height + 24px;
 			margin: 0px;
 			margin-bottom: 5px;
 			margin-left: 5px;
@@ -850,10 +854,12 @@ body {
 		
 			.sidecontentbox .collapse-button {
 				background: transparent;
-				border: 0px;
-				border-radius: 0px;
+				border: 1px #999 solid;
+				border-radius: 2px;
 				color: #262626;
+				float: right; /* ErayaN change added this line */
 				font-size: 15px;
+				margin-top: -1em; /* ErayaN change added this line */
 			}
 		
 		.sidecontentbox .content {
@@ -936,7 +942,7 @@ body {
 /* Links/Posts Area */
 /* Actual Links */
 	.content {
-		margin-top: 34px;
+		margin-top: 14px;
 		margin-left: 10px;
 	}
 
@@ -999,7 +1005,7 @@ body {
 
 
 		.link {
-			margin-right: 320px;
+			margin-right: $side-width + 20px;
 			margin-bottom: 8px;
 			padding: 8px 10px 6px 10px;
 			border-radius: 2px;
@@ -1020,7 +1026,7 @@ body {
 
 			/* Promoted Link */
 			.organic-listing {
-				margin-right: 320px;
+				margin-right: $side-width + 20px;
 				border: 1px solid #D0D6DD;
 				border-bottom-width: 3px;
 				border-top-width: 0px;
@@ -1225,13 +1231,13 @@ body {
 		}
 
 		.menuarea {
-			margin-right: 320px;
+			margin-right: $side-width + 20px;
 			border: none;
 			font-size: 16px;
 		}
 
 		.infobar {
-			margin-right: 320px;
+			margin-right: $side-width + 20px;
 			background-color: #4B4A4A;
 			border: none;
 			color: #fff;
@@ -1249,7 +1255,7 @@ body {
 
 		.nextprev {
 			margin-top: 8px;
-			margin-right: 320px;
+			margin-right: $side-width + 20px;
 			height: 35px;
 			color: #737373;
 			text-align:center;
@@ -1272,7 +1278,7 @@ body {
 
 	/* Submit Page */
 	form#newlink.submit.content {
-		margin-top: 40px;
+		margin-top: 20px;
 	}
 
 
@@ -1294,7 +1300,12 @@ body {
 		
 		.submit-page .tabmenu li a {margin:0px;}
 		.submit-page ul.tabmenu.formtab {padding-left: 0px;width: 500px;text-align:center; }
-		.formtabs-content {padding-top: 0px;border-top: 4px solid $naut-browser-selection-background-color;}	
+		.formtabs-content {
+			padding-top: 0px;
+			border-top: 4px solid $naut-browser-selection-background-color;
+			width: auto;
+			margin-right: $side-width + 20px;
+		}	
 	
 			.submit-page .tabmenu.formtab a {
 				padding: 5px 55px 0px 55px;
@@ -1320,8 +1331,9 @@ body {
 		.roundfield {
 			padding: 10px 10px 10px 10px;
 			color: #707070;
+			width: auto;
 		}
-		
+				
 			.submit-page textarea, .roundfield input[type=url], .roundfield input[type=text], .login-form-side input[type=text], .login-form-side input[type=password],
 			.linefield textarea, .linefield input[type="text"], .flairlist .flaircell input[type="text"], .linkinfo .shortlink input, .search-page #search input[type=text] {
 				margin: 0;
@@ -1349,7 +1361,7 @@ body {
 			margin-bottom: 30px;
 			margin-left: 0px;
 			padding: 10px 10px 10px 10px;
-			width: 522px;
+			width: calc(100% - #{$side-width + 20px});
 			color: #707070 !important;
 			text-align: center;
 			cursor: pointer;
@@ -1372,12 +1384,13 @@ body {
 				.submit-page .side h1 {display: inherit;}
 
 	.content.submit .info-notice {
-		margin: 0px 0px 4px 0px;
+		margin: 0px #{$side-width + 20px} 4px 0px; /* EraYaN change fixed the side bar stuff */
 		padding: 20px 10px 20px 10px;
 		color: #707070;
 		text-align: center;
 		border: 0px;
 		border-bottom: 3px solid #E5E5E5;
+		width: auto;
 	}
 
 		.content.submit .info-notice a {
@@ -1386,7 +1399,7 @@ body {
 		}
 
 			.content.submit .info-notice a:hover {text-decoration: underline;}
-			.thing.spam {border-color: #F3B9B9; background-color: #fff;margin-right: 320px;}			
+			.thing.spam {border-color: #F3B9B9; background-color: #fff;margin-right: $side-width + 20px;}			
 			#file {margin: 10px;}		
 			.submit-page .gray, #suggested-reddits {display: none;}
 			.submit-page form .spacer+.spacer {margin: 8px 0px;}
@@ -1576,7 +1589,7 @@ body {
 /*
 			.flairtemplatelist flairlist pretty-form {
 				margin-top: 2px;
-				margin-right: 320px;
+				margin-right: $side-width + 20px;
 				padding: 5px 5px 8px 3px;
 				color: #707070;
 				text-transform: capitalize;
@@ -1598,7 +1611,7 @@ body {
 */
 				.flairtemplate .flairrow {
 					margin-top: 2px;
-					margin-right: 320px;
+					margin-right: $side-width + 20px;
 					padding: 5px 5px 8px 3px;
 					color: #707070;
 					text-transform: capitalize;
@@ -1614,7 +1627,7 @@ body {
 				.tabmenu li#tab-link_templates.selected a, .tabmenu li#tab-link_templates a:hover {color: #333;}
 	/* WIKI Page */
 	.wiki-page .wiki-page-content {
-		margin: 5px 320px 10px 0px;
+		margin: 5px #{$side-width + 20px} 10px 0px;
 		padding: 5px 10px 5px 10px;
 		background-color: #fff;
 		border: 1px solid #d8d8d8;
@@ -1697,7 +1710,7 @@ body {
 
 	/*Stylesheet fix */
 	.pretty-form {
-		margin-right: 320px;
+		margin-right: $side-width + 20px;
 		margin-bottom: 10px;
 		padding: 10px 10px 10px 10px;
 		color: #707070;
@@ -1713,7 +1726,7 @@ body {
 			content: "If your reddit alien looks 'glitched', check that you upload the headerbypass.png image on the /about/edit page!";
 			margin: 1em 0 0 0;
 			position: absolute;
-			top: 119px;
+			top: $header-height - 58px;
 			z-index: 99;
 			line-height: 47px;
 			left: 139px;
@@ -1738,7 +1751,7 @@ body {
 		.sheets {margin-right: 0px;}
 	
 	#images {
-		margin-right: 320px;
+		margin-right: $side-width + 20px;
 		margin-bottom: 30px;
 		padding: 10px 10px 10px 10px;
 		height: 1280px;
@@ -1765,7 +1778,7 @@ body {
 		
 	.commentarea {
 		margin-top: 10px;
-		margin-right: 320px;
+		margin-right: $side-width + 20px;
 		margin-bottom: 30px;
 		padding: 10px 10px 10px 10px;
 		background-color: #FCFCFC;
@@ -1815,7 +1828,7 @@ body {
 		/* Comments */
 		.commentarea .menuarea {
 			display: inline;
-			margin: 0 0px 10px -320px;
+			margin: 0 0px 10px #{-$side-width - 20px};
 			padding: 0;
 			color: #c0c0c0;
 			font-weight: normal;
@@ -2017,7 +2030,7 @@ body {
 	}	
 
 		.search-page .searchpane {
-			margin: 5px 320px 5px 0px;
+			margin: 5px #{$side-width + 20px} 5px 0px;
 			padding-left: 96px;
 			height: 120px;
 		}
@@ -2035,7 +2048,7 @@ body {
 		
 		.searchfacets {
 			margin-top: 10px;
-			margin-right: 320px;
+			margin-right: $side-width + 20px;
 			padding: 10px;
 			box-shadow:none;
 			color: $naut-body-color;
@@ -2062,7 +2075,7 @@ body {
 
 			.res #searchexpando {
 				padding: 10px 5px 10px 25px;
-				height: inherit;
+				height: auto !important; /*EraYaN change from inherit*/
 			}
 
 			.res .content .RESBigEditorPop {
@@ -2173,7 +2186,7 @@ body {
 
 
 	#progressIndicator, #NERFail, .NERPageMarker {
-		margin-right: 320px !important;
+		margin-right: $side-width + 20px !important;
 		width: inherit !important;
 		background-color: white !important;
 		border: 1px solid #d8d8d8 !important;
