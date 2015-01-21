@@ -230,5 +230,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#SASS
+# SASS
 .sass-cache
+
+# Notepad++ backups
+.bak

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Furigana tests</title>
+<meta charset="UTF-8">
+<link href="furigana.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>/r/LearnJapanese furigana</h1>
+<p>Rest of the text is here and here and here and here.<br>
+Rest of the text is here 漢字<a title="かんじ" href="#fg">漢字</a>漢字 and more.<br>
+Rest of the text is here and here and here and here.</p>
+<p><pre>&lt;a title=&quot;かんじ&quot; href=&quot;#fg&quot;&gt;漢字&lt;/a&gt;</pre>
+On reddit: <pre>[漢字](#fg "かんじ")</pre>
+<p>Rest of the text is here and here and here and here.<br>
+Rest of the text is here 漢字<a title="かんじ" href="#fgb">漢字</a>漢字 and more.<br>
+Rest of the text is here and here and here and here.</p>
+<p><pre>&lt;a title=&quot;かんじ&quot; href=&quot;#fgb&quot;&gt;漢字&lt;/a&gt;</pre>
+On reddit: <pre>[漢字](#fgb "かんじ")</pre>
+<h1>Superscript furigana</h1>
+<p>漢字<sup>かんじ</sup></p>
+<p>
+<pre>漢字&lt;sup&gt;かんじ&lt;/sup&gt;</pre>
+On reddit:
+<pre>漢字^(かんじ)</pre>
+</p>
+<p><sup>かんじ</sup>漢字</p>
+<p>
+<pre>&lt;sup&gt;かんじ&lt;/sup&gt;漢字</pre>
+On reddit:
+<pre>^(かんじ)漢字</pre>
+</p>
+<h1>W3C furigana/ruby (simple)</h1>
+<p>これは<ruby><rb>紙芝居</rb><rt>かみしばい</rt></ruby>です。</p>
+<p>
+<pre>&lt;p&gt;これは&lt;ruby&gt;&lt;rb&gt;紙芝居&lt;/rb&gt;&lt;rt&gt;かみしばい&lt;/rt&gt;&lt;/ruby&gt;です。&lt;/p&gt;</pre>
+</p>
+<h1>W3C furigana/ruby (complex)</h1>
+<p>
+<ruby>
+<rbc><rb>林</rb> <rb>和</rb> <rb>代</rb></rbc>
+<rtc> <rt>はやし</rt><rt>かず</rt><rt>よ</rt> </rtc>
+</ruby>
+</p>
+<p><pre>
+&lt;ruby&gt;<br>
+&lt;rbc&gt;&lt;rb&gt;林&lt;/rb&gt; &lt;rb&gt;和&lt;/rb&gt; &lt;rb&gt;代&lt;/rb&gt;&lt;/rbc&gt;<br>
+&lt;rtc&gt; &lt;rt&gt;はやし&lt;/rt&gt; &lt;rt&gt;かず&lt;/rt&gt; &lt;rt&gt;よ&lt;/rt&gt; &lt;/rtc&gt;<br>
+&lt;/ruby&gt;
+</pre>
+</p>
+<p>
+<ruby>
+<rbc><rb>林</rb> <rb>和</rb> <rb>代</rb></rbc>
+<rtc> <rt>はやし</rt><rt rbspan="2">かずよ</rt> </rtc>
+</ruby>
+</p>
+<p><pre>
+&lt;ruby&gt;<br>
+&lt;rbc&gt;&lt;rb&gt;林&lt;/rb&gt; &lt;rb&gt;和&lt;/rb&gt; &lt;rb&gt;代&lt;/rb&gt;&lt;/rbc&gt;<br>
+&lt;rtc&gt; &lt;rt&gt;はやし&lt;/rt&gt;&lt;rt rbspan=&quot;2&quot;&gt;かずよ&lt;/rt&gt; &lt;/rtc&gt;<br>
+&lt;/ruby&gt;</pre>
+</p>
+<p><ruby>
+<rbc><rb>民政局</rb></rbc>
+<rtc><rt>みんせいきょく</rt></rtc>
+<rtc><rt>ガバメント・セクシヨン</rt></rtc>
+</ruby></p>
+<p><pre>
+&lt;ruby&gt;<br>
+&lt;rbc&gt;&lt;rb&gt;民政局&lt;/rb&gt;&lt;/rbc&gt;<br>
+&lt;rtc&gt;&lt;rt&gt;みんせいきょく&lt;/rt&gt;&lt;/rtc&gt;<br>
+&lt;rtc&gt;&lt;rt&gt;ガバメント・セクシヨン&lt;/rt&gt;&lt;/rtc&gt;<br>
+&lt;/ruby&gt;</pre>
+</p>
+</body>
+</html> 

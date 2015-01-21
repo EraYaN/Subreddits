@@ -1,0 +1,43 @@
+/* /r/LearnJapanese furigana */
+a[href$="/fg"], a[href$="#fg"], a[href$="/fgb"], a[href$="#fgb"] {
+cursor: default !important;
+text-decoration: none;
+line-height: 1;
+text-align: center;
+display: inline-block;
+color: inherit !important;
+position: relative;
+}
+a[href$="/fgb"], a[href$="#fgb"] {
+top: 0.8em;
+margin-top:-0.8em;
+margin-bottom: 0.5em;
+}
+/* For the ruby characters. */
+a[href$="/fg"]:before, a[href$="#fg"]:before, a[href$="/fgb"]:after, a[href$="#fgb"]:after {
+font-size: 0.70em;
+font-weight: normal;
+line-height: 1.2;
+cursor: default;
+text-decoration: none;
+display: block;
+content: attr(title);
+position: relative;
+}
+/* Second option (then you can have furigana underneath aswell)*/
+sup:before {
+cursor: default !important;
+text-decoration: none;
+line-height: 1;
+text-align: center;
+display: inline-block;
+color: inherit !important;
+}
+sup {
+font-size: 0.70em;
+font-weight: normal;
+line-height: 1.2;
+cursor: pointer;
+text-decoration: none;
+display: block;
+} 
