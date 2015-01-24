@@ -50,6 +50,21 @@ $sidebar-image-width: $side-width;
 $sidebar-image-height: $sidebar-image-actualheight / $sidebar-image-actualwidth * $sidebar-image-width;
 $side-padding-top: 0.95 * $sidebar-image-height;
 
+/* Shorthands */
+
+%pixel-art-images{
+ 	image-rendering: -moz-crisp-edges;         /* Firefox */
+    image-rendering:   -o-crisp-edges;         /* Opera */
+    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */	
+}
+
+%photo-images{
+ 	image-rendering:optimizeQuality;
+	-ms-interpolation-mode:bicubic;
+}
+
 /* Actual CSS "Code" */
 
 /* Vanity names */
@@ -111,9 +126,11 @@ a.author[href$="user/EraYaN"]:before {
 	background-image: $downvoted-image; 
 } 
 .arrow.up:hover, .arrow.upmod:hover {
+	@extend %pixel-art-images;
 	background-image: $upvote-hover-image; 
 } 
 .arrow.down:hover, .arrow.downmod:hover {
+	@extend %photo-images;
 	background-image: $downvote-hover-image;
 } 
 
