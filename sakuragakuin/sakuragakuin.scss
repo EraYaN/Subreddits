@@ -44,6 +44,11 @@ $logo-height: 148px;
 $logo-width: $logo-height * 3.216216216216216;
 $header-height: 200px;
 $side-width: 300px;
+$sidebar-image-actualwidth: 985px;
+$sidebar-image-actualheight: 1207px;
+$sidebar-image-width: $side-width;
+$sidebar-image-height: $sidebar-image-actualheight / $sidebar-image-actualwidth * $sidebar-image-width;
+$side-padding-top: 0.95 * $sidebar-image-height;
 
 /* Actual CSS "Code" */
 
@@ -76,7 +81,7 @@ a.author[href$="user/BurntJoint"]:before {
 }
 a.author[href$="user/EraYaN"]:before {
   @extend %vanity-name:before;
-  content:"CSS Master BLEHRG";
+  content:"EraYaN - CSS Dude";
   margin-right: -3.33em;
 }
 
@@ -130,14 +135,51 @@ body > .content .link .midcol {
 }
 
 /* changes votecount number color and size for clearer display */
-/*.likes div.score.likes {
+.likes div.score.likes {
     color: #FF6200;
     font-size: 17px !important;
-    }
+}
 .link .score {
     font-size: 17px;
-    }*/
-
+}
+/* Changes message count number background*/
+.message-count {
+    background-color: transparent;
+	color: black;
+	font-size: 0.9em;
+}
+.message-count:before {
+	content: '(';
+}
+.message-count:after {
+   content: ')';
+}
+/* Changes max-width of the markdown */
+.md {
+    max-width: 100%;
+}
+/* Flairs */
+.flair-sg-en{
+	
+}
+.flair-sg-jp{
+	
+}
+.flair-bm-en{
+	
+}
+.flair-ts-en{
+	
+}
+.flair-mp-en{
+	
+}
+.flair-sp-en{
+	
+}
+.flair-kl-en{
+	
+}
 /*
 	Version 2.3
 	Stylesheet by Cryptonaut
@@ -161,6 +203,9 @@ body {
 	background-color: $naut-body-background-color;
 	color: $naut-body-color;
 	font-family: arial, sans-serif;
+	background-image: url(%%background-left%%),url(%%background-right%%);
+	background-position: left top, right top; 
+	background-repeat: repeat-y, repeat-y; 
 }
 
 	/* Custom browser CSS */
@@ -525,9 +570,9 @@ body {
 	/* Sidebar */
 	.side {
 		float: right;
-		margin: 14px 10px 0px 0px;
+		margin: 14px 45px 0px 0px; /* EraYaN change to give background image space. */
 		border-radius: 2px;
-		padding-top: 25px;
+		padding-top: $side-padding-top; /* EraYaN change to give sidebar image space. */
 		width: $side-width;
 		text-align: left;
 		font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
@@ -614,20 +659,29 @@ body {
 				}
 
 				.account-activity-box, .sidebox.create, .morelink .nub {display: none;}
-		/* Subreddit name sidebar */
+		/* Subreddit name sidebar */		
 		.titlebox h1 a {
 			position: absolute;
-			top: $header-height + 24px;
+			top: $header-height + 14px;
+			right: 45px;
 			margin: 0px;
 			margin-bottom: 5px;
 			margin-left: 5px;
-			font-weight: lighter;
+			/*font-weight: lighter;
 			color: #707070;
 			text-transform: capitalize;
 			font-size: 25px;
-			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;*/
+			color: transparent;
+			background-image: url(%%sidebar-image%%);
+			background-position: top center;
+			background-size: contain;
+			display: block;
+			width: $side-width;
+			height: $sidebar-image-height;
+			background-repeat: no-repeat;
 		}		
-			.titlebox h1 a:hover {color: $naut-browser-selection-background-color;text-decoration: none;}
+			/*.titlebox h1 a:hover {color: $naut-browser-selection-background-color;text-decoration: none;}*/ /* EraYaN change, image don't need no stuff */
 
 		.sidebox .subtitle {font-size: 1.6em;}
 	
@@ -944,8 +998,9 @@ body {
 /* Links/Posts Area */
 /* Actual Links */
 	.content {
-		margin-top: 14px;
-		margin-left: 10px;
+		margin-top: 14px; 
+		margin-left: 45px; /* EraYaN change to give the background space */
+		margin-right: 42px; /* EraYaN change to give the background space */
 	}
 
 			/* Fixed Scroll Banner */
@@ -2059,7 +2114,7 @@ body {
 		}
 
 		.search-page #header .tabmenu {display: none !important;}
-		.search-page .side {padding-top: 40px;}
+		.search-page .side {padding-top: $side-padding-top+15px;}
 		
 		.search-summary {margin-right: 40px;}
 
