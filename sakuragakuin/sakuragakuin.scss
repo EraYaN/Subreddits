@@ -211,6 +211,16 @@ body > .content .link .midcol {
 .submit_text.enabled {
 	display: block !important;
 }
+/* New CSS fixes */
+.side .md h6 {
+  text-decoration: none;
+}
+.content .sitetable .thing {	
+	background-color: #FCFCFC;
+	box-sizing: border-box;
+	/*width: calc( 100% - #{$side-width+28px} );*/
+}
+
 /*
 	Version 2.3
 	Stylesheet by Cryptonaut
@@ -1051,9 +1061,11 @@ body {
 				box-shadow: 0 2px 4px 0 #d3d3d3;
 				color: #737373;
 				padding-left: 55px;
-				font-weight: normal;
-				font-size: 22px;
-				line-height: 35px;
+				font-weight: normal !important; /* EraYaN new CSS fix */
+				text-decoration: none !important; /* EraYaN new CSS fix */
+				font-size: 22px !important; /* EraYaN new CSS fix */
+				line-height: 35px !important; /* EraYaN new CSS fix */
+				 margin-top: 0 !important; /* EraYaN new CSS fix */
 			}
 
 				.titlebox h6 a {
