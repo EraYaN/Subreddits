@@ -44,8 +44,8 @@ $logo-height: 148px;
 $logo-width: $logo-height * 3.216216216216216;
 $header-height: 200px;
 $side-width: 300px;
-$sidebar-image-actualwidth: 977px;
-$sidebar-image-actualheight: 809px;
+$sidebar-image-actualwidth: 1081px;
+$sidebar-image-actualheight: 800px;
 $sidebar-image-width: $side-width;
 $sidebar-image-height: $sidebar-image-actualheight / $sidebar-image-actualwidth * $sidebar-image-width;
 $side-padding-top: 0.95 * $sidebar-image-height;
@@ -91,7 +91,7 @@ a.author[href$="user/GhettoNinjaStar"]:before {
 }
 a.author[href$="user/BurntJoint"]:before {
   @extend %vanity-name:before;
-  content:"Headmaster";
+  content:"Headmaster ʕ•ᴥ•ʔ";
   margin-right: -4.5em;
 }
 a.author[href$="user/EraYaN"]:before {
@@ -403,7 +403,7 @@ body {
 		height: $header-height;
 		background-color: white;
 		background-image:  url(%%header-foreground%%), url(%%header-background%%); /* EraYaN change new background */
-		background-position: top right, top left;
+		background-position: right bottom, left bottom;
 		background-repeat: no-repeat, repeat-x;
 		background-size: contain, auto;
 		border-bottom: 0px solid;
